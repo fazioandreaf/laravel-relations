@@ -23,8 +23,21 @@ class ControllerMain extends Controller
         return view('pages.add',compact('brand'));
     }
     public function add_function(Request $request){
-        dd($request->all());
-        return redirect()->route('home',$car);
+        // dd($request -> all());
+        $validate=$request -> validate([
+            'name'=>'required|string',
+            'model'=>'required|string',
+            'kW'=>'required|integer',
+        ]);
+        $brand=Brand::findOrFail($request->get('brand_id'));
+        $car=Car::make($validate);
+        // dd($brand->name);
+        $car ->brand() -> associate($brand);
+        $car ->save();
+        // dd($request -> get('pilots_id'));
+        // $car -> pilots() -> attach($request -> get('pilots_id'));
+        // $car -> save();
+        return redirect()->route('home');
 
     }
 }
