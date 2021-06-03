@@ -55,5 +55,15 @@
                 }
             }
         }
+        .pilot_form {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 50%;
+            margin: 0 auto;
+            .pilot_form-class {
+                margin: 3px;
+            }
+        }
     }
 }

@@ -71,3 +71,15 @@
   font-style: italic;
 }
 
+* body .pilot_form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+}
+
+* body .pilot_form .pilot_form-class {
+  margin: 3px;
+}
+

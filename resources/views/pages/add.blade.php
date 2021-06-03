@@ -4,7 +4,7 @@
     @method('post')
     @csrf
     <div class="car_form">
-        <h2>car</h2>
+        <h2>Car</h2>
         <label for="">Name</label>
         <input type="text" name="name" id="">
         <label for="">Model</label>
@@ -14,19 +14,23 @@
     </div>
     <div>
         <div>
-
+            <h2>Brand</h2>
             <select name="brand_id" id="">
-                <option value="">Nessuno</option>
+                {{-- <option value="20">Nessuno</option> --}}
                 @foreach ($brand as $item)
                 <option value="{{$item->id}}">{{$item->name}}</option>
                 @endforeach
             </select>
         </div>
-        <div>
-            <select name="pilot_id" id="">
-                <option value="">Nessuno</option>
+        <div class="pilot_form">
+            {{-- <select name="pilot_id" id=""> --}}
+                {{-- <option value="">Nessuno</option> --}}
                 @foreach ($pilot as $item)
-                <option value="{{$item->id}}">{{$item->name}}</option>
+                <div class="pilot_form-class">
+
+                    <input type="checkbox" name="pilot_id[]" value="{{$item->id}}">
+                    <label for="">{{$item->name}} {{$item->lastname}}</label>
+                </div>
                 @endforeach
             </select>
 

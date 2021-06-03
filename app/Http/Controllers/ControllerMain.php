@@ -31,15 +31,21 @@ class ControllerMain extends Controller
             'kW'=>'required|integer',
         ]);
         $brand_id=$request->get('brand_id');
-        // if()
         $brand=Brand::findOrFail($brand_id);
         $car=Car::make($validate);
         // dd($brand->name);
         $car ->brand() -> associate($brand);
         $car ->save();
-        // dd($request -> get('pilots_id'));
-        $car -> pilots() -> attach($request -> get('pilot_id'));
-        $car -> save();
+        // dd($request -> get('pilot_id'));
+        $pilot=$request -> get('pilot_id');
+        // dd(count($pilot[0]));
+        foreach($pilot as $var){
+            // dd($var);
+            $car -> pilots() -> attach($var);
+            $car -> save();
+
+        };
+
         return redirect()->route('home');
 
     }
