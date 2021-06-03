@@ -20,7 +20,8 @@ class ControllerMain extends Controller
     }
     public function add(){
         $brand=Brand::all();
-        return view('pages.add',compact('brand'));
+        $pilot=Pilot::all();
+        return view('pages.add',compact('brand','pilot'));
     }
     public function add_function(Request $request){
         // dd($request -> all());
@@ -29,14 +30,16 @@ class ControllerMain extends Controller
             'model'=>'required|string',
             'kW'=>'required|integer',
         ]);
-        $brand=Brand::findOrFail($request->get('brand_id'));
+        $brand_id=$request->get('brand_id');
+        // if()
+        $brand=Brand::findOrFail($brand_id);
         $car=Car::make($validate);
         // dd($brand->name);
         $car ->brand() -> associate($brand);
         $car ->save();
         // dd($request -> get('pilots_id'));
-        // $car -> pilots() -> attach($request -> get('pilots_id'));
-        // $car -> save();
+        $car -> pilots() -> attach($request -> get('pilot_id'));
+        $car -> save();
         return redirect()->route('home');
 
     }
