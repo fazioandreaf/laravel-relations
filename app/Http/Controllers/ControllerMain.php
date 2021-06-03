@@ -29,6 +29,8 @@ class ControllerMain extends Controller
             'name'=>'required|string',
             'model'=>'required|string',
             'kW'=>'required|integer',
+            'brand_id'=>'required|integer',
+            'pilot_id'=>'required|integer',
         ]);
         $brand_id=$request->get('brand_id');
 
