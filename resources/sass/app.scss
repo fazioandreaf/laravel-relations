@@ -39,5 +39,21 @@
             color: white;
             background-color: lightgreen;
         }
+        .add {
+            position: fixed;
+            background-color: purple;
+            top: 5px;
+            right: 20px;
+            a {
+                font-size: 3rem;
+                padding: 20px;
+                text-decoration: none;
+                color: white;
+                &:hover {
+                    color: yellow;
+                    font-style: italic;
+                }
+            }
+        }
     }
 }

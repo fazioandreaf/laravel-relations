@@ -52,3 +52,22 @@
   background-color: lightgreen;
 }
 
+* body .add {
+  position: fixed;
+  background-color: purple;
+  top: 5px;
+  right: 20px;
+}
+
+* body .add a {
+  font-size: 3rem;
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+* body .add a:hover {
+  color: yellow;
+  font-style: italic;
+}
+

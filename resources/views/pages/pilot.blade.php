@@ -1,6 +1,6 @@
 @extends('layouts.main_layout')
 @section('content')
-<div class="p_d">
+<div >
 
     <span class="pilot_detail">
         Nome:
@@ -37,5 +37,8 @@
         {{$item-> kW}}
     </div>
         @endforeach
+</div>
+<div>
+    <a href="{{route('home')}}">Ritorna alle auto</a>
 </div>
 @endsection
