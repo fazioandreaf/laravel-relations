@@ -17,3 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/pages/home', 'ControllerMain@home')->name('home');
+Route::get('/pilot/{id}', 'ControllerMain@pilot')->name('pilot');

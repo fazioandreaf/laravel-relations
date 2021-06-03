@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* body {
+  background-color: lightgray;
+  text-align: center;
+}
+
+* body header,
+* body footer {
+  background-color: gray;
+}
+
+* body ul {
+  list-style-type: georgian;
+}
+
+* body li {
+  display: flex;
+  padding: 2px;
+}
+
+* body li > div {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+* body li > div span {
+  color: white;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+* body .brand {
+  background-color: lightgreen;
+}
+
+* body .pilot {
+  background-color: lightblue;
+}
+
+* body .car {
+  background-color: lightpurple;
+}
+
+* body .pilot_detail {
+  font-style: italic;
+  color: white;
+  background-color: lightgreen;
+}
+
